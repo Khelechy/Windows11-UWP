@@ -12,4 +12,4 @@
     BlurAmount="20"/>
  ```
  
- ![GitHub Logo](Screenshot(15).png)
+ ![Image](Screenshot (15).png)
