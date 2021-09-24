@@ -1,0 +1,356 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:media="using:Microsoft.Toolkit.Uwp.UI.Media" xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    mc:Ignorable="d">
+    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <ScrollViewer.Background>
+            <ImageBrush ImageSource="Assets/winwallpaper.png" Stretch="Fill"/>
+        </ScrollViewer.Background>
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,20,20" Spacing="5">
+                <Image Source="Assets/recycle.png" Height="40" Width="40" HorizontalAlignment="Center"/>
+                <TextBlock Text="Recycle Bin" Foreground="White" FontSize="13"/>
+            </StackPanel>
+
+            <!--MENU DISPLAY STARTED-->
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Popup x:Name="menuPopup" HorizontalAlignment="Center" IsLightDismissEnabled="True" HorizontalOffset="-270" ShouldConstrainToRootBounds="True">
+                    <Popup.ChildTransitions>
+                        <TransitionCollection>
+                            <PaneThemeTransition Edge="Bottom"/>
+                        </TransitionCollection>
+                    </Popup.ChildTransitions>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Frame HorizontalAlignment="Center" Padding="50">
+                            <Frame.Background>
+                                <ImageBrush ImageSource="Assets/menubg.png" Stretch="Fill"/>
+                            </Frame.Background>
+                            <StackPanel Spacing="30">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Pinned" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
+                                    <Frame Grid.Column="1" CornerRadius="6" Background="#2E417C" HorizontalAlignment="Right" Padding="6">
+                                        <StackPanel Spacing="10" Orientation="Horizontal" Margin="5,0,5,0">
+
+                                            <TextBlock Text="All apps" Foreground="White" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                            <Image Source="Assets/arrowright.png" Height="15" Width="15" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Frame>
+                                </Grid>
+                                <Grid ColumnSpacing="30" RowSpacing="30">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Row="0" Grid.Column="0">
+                                        <Image Source="Assets/edge.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Microsoft Edge" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="1">
+                                        <Image Source="Assets/word.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Word" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="2">
+                                        <Image Source="Assets/excel.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Excel" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="3">
+                                        <Image Source="Assets/powerpoint.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Powerpoint" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="4">
+                                        <Image Source="Assets/calendar.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Calendar" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="5">
+                                        <Image Source="Assets/settings.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Settings" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="0">
+                                        <Image Source="Assets/mstore.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Microsoft Store" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="1">
+                                        <Image Source="Assets/egames.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Epic Games" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="2">
+                                        <Image Source="Assets/spotify.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Spotify" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="3">
+                                        <Image Source="Assets/news.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="News" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="4">
+                                        <Image Source="Assets/xbox.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Xbox" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="5">
+                                        <Image Source="Assets/solitaire.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Solitaire" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="0">
+                                        <Image Source="Assets/onedrivecloud.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Onedrive" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="1">
+                                        <Image Source="Assets/netflix.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Netflx" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="2">
+                                        <Image Source="Assets/todo.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="To do" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="3">
+                                        <Image Source="Assets/powerpoint.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Office" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="4">
+                                        <Image Source="Assets/twitter.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Twitter" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="2" Grid.Column="5">
+                                        <Image Source="Assets/skype.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Skype" Foreground="White" FontSize="11" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Recommended" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
+                                    <Frame Grid.Column="1" CornerRadius="6" Background="#2E417C" HorizontalAlignment="Right" Padding="6" Tapped="Frame_Tapped">
+                                        <StackPanel Spacing="10" Orientation="Horizontal" Margin="5,0,5,0">
+                                            <TextBlock Text="More" Foreground="White" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                            <Image Source="Assets/arrowright.png" Height="15" Width="15" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Frame>
+                                </Grid>
+                                <Grid RowSpacing="40">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Row="0" Grid.Column="0"  Orientation="Horizontal" Spacing="10">
+                                        <Image Source="Assets/getstarted.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <StackPanel>
+                                            <TextBlock Text="Get Started" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                                            <TextBlock Text="Welcome to Windows" Foreground="White" FontSize="10"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="1"  Orientation="Horizontal" Spacing="10">
+                                        <Image Source="Assets/folder.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <StackPanel>
+                                            <TextBlock Text="Onedrive" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                                            <TextBlock Text="Recently added" Foreground="White" FontSize="10"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Horizontal" Spacing="10">
+                                        <Image Source="Assets/picture.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <StackPanel>
+                                            <TextBlock Text="img-22-40" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                                            <TextBlock Text="1m ago" Foreground="White" FontSize="10"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" Grid.Column="1"  Orientation="Horizontal" Spacing="10">
+                                        <Image Source="Assets/picture.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                                        <StackPanel>
+                                            <TextBlock Text="img-23-44" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                                            <TextBlock Text="2m ago" Foreground="White" FontSize="10"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+
+                            </StackPanel>
+                        </Frame>
+                        <Frame HorizontalAlignment="Stretch" CornerRadius="6" Margin="0,-5,0,0">
+                            <Frame.Background>
+                                <media:AcrylicBrush
+                            BackgroundSource="Backdrop"
+                            TintColor="Gray"
+                            TintOpacity="0.2"
+                            BlurAmount="20"/>
+                            </Frame.Background>
+                            <Grid Margin="50,10,50,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/profile.png" Height="40" Width="40" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Kelechi Onyekwere" FontWeight="Bold" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <Image Grid.Column="1" Source="Assets/shutdown.png" Height="20" Width="20" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Frame>
+                    </StackPanel>
+                </Popup>
+                <Popup x:Name="menuPopup2" HorizontalAlignment="Center" IsLightDismissEnabled="True" HorizontalOffset="-80" ShouldConstrainToRootBounds="True">
+                    <Popup.ChildTransitions>
+                        <TransitionCollection>
+                            <PaneThemeTransition Edge="Right"/>
+                        </TransitionCollection>
+                    </Popup.ChildTransitions>
+                    <Frame HorizontalAlignment="Stretch" CornerRadius="10" Padding="20">
+                        <Frame.Background>
+                            <media:AcrylicBrush
+                            BackgroundSource="Backdrop"
+                            TintColor="Black"
+                            TintOpacity="0.2"
+                            BlurAmount="15"/>
+                        </Frame.Background>
+                        <!--<Frame.Background>
+                            <ImageBrush ImageSource="Assets/menubg.png" Stretch="Fill"/>
+                        </Frame.Background>-->
+                        <StackPanel Spacing="18" Opacity=".7">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <Image Source="Assets/red.png" Width="10" Height="10"/>
+                                    <Image Source="Assets/yellow.png" Width="10" Height="10"/>
+                                    <Image Source="Assets/green.png" Width="10" Height="10"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Foreground="White" Opacity=".5" Text="-----------------------------------------" FontWeight="Bold" FontSize="14"/>
+                            <StackPanel Spacing="20" Margin="10,0,10,0">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/home.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Home" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/radio.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Radio" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/nnews.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Feed" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Foreground="White" Opacity=".5" Text="-----------------------------------------" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Foreground="White" Opacity=".5" Text="Discover and Eplore" FontWeight="Bold" FontSize="14" Margin="8,0,8,0"/>
+                            <StackPanel Spacing="20" Margin="10,0,10,0">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/bolt.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="News and Notable" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/chart.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Trends" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/ccalendar.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Release Calendar" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/flag.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Events" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Foreground="White" Opacity=".5" Text="-----------------------------------------" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Foreground="White" Opacity=".5" Text="Your Collection" FontWeight="Bold" FontSize="14" Margin="8,0,8,0"/>
+                            <StackPanel Spacing="20" Margin="10,0,10,0">
+                                
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/star.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Favourite Songs" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/group.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Artists" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <Image Source="Assets/music.png" Width="20" Height="20"/>
+                                    <TextBlock Foreground="White" Text="Albums" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Frame>
+                </Popup>
+            </StackPanel>
+            <!--MENU DISPLAY ENDED-->
+
+
+
+            <!--BUTTOM NAVIGATION DOCK STARTED-->
+            <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+                <Frame HorizontalAlignment="Stretch" Padding="3">
+                    <Frame.Background>
+                        <media:AcrylicBrush
+                        BackgroundSource="Backdrop"
+                        TintColor="Black"
+                        TintOpacity="0.2"
+                        BlurAmount="20"/>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="15">
+
+                            <Image x:Name="menuButton" Source="Assets/menu.png" Height="20" Width="20" VerticalAlignment="Center" Tapped="menuButton_Tapped"/>
+                            <Image Source="Assets/search.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/task.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/widget.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/cam.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/explorer.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/steam.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/powerpoint.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/edge.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <Image Source="Assets/store.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Right" Spacing="15" Orientation="Horizontal" Margin="0,0,20,0">
+                            <Image Source="Assets/arrowup.png" Height="15" Width="15" VerticalAlignment="Center"/>
+                            <Image Source="Assets/onedrive.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,10,0" Spacing="10">
+
+                                <Image Source="Assets/wifi.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                                <Image Source="Assets/volume.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                                <Image Source="Assets/battery.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="20">
+                                <StackPanel>
+                                    <TextBlock Foreground="White" Text="8:00 AM" FontSize="12" HorizontalAlignment="Right" HorizontalTextAlignment="End"/>
+                                    <TextBlock Foreground="White" Text="6/24/2021" FontSize="12" HorizontalAlignment="Right" HorizontalTextAlignment="End"/>
+                                </StackPanel>
+                                <Image Source="Assets/notification.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Frame>
+            </StackPanel>
+            <!--BUTTOM NAVIGATION DOCK ENDED-->
+            
+            
+            
+            
+        </Grid>
+    </ScrollViewer>
+</Page>
