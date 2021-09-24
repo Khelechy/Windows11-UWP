@@ -12,4 +12,4 @@
     BlurAmount="20"/>
  ```
  
- ![Image](Screenshot (15).png)
+ ![Image](image1.png)
