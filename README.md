@@ -2,7 +2,7 @@
 
 ### A Microsoft UWP design of the Windows 11 OS
 
-#### GlassMorphism design was achieved using AcrylicBrush
+#### GlassMorphism design was achieved using *AcrylicBrush*
 
 ```xaml
  <media:AcrylicBrush
@@ -11,3 +11,5 @@
     TintOpacity="0.2"
     BlurAmount="20"/>
  ```
+ 
+ ![GitHub Logo](Screenshot(15).png)
